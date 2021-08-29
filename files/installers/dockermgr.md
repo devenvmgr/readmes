@@ -28,11 +28,11 @@ mkdir -p "$HOME/.local/share/srv/docker/GEN_README_REPLACE_APPNAME/"
 
 git clone https://github.com/dockermgr/GEN_README_REPLACE_APPNAME "$HOME/.local/share/CasjaysDev/dockermgr/GEN_README_REPLACE_APPNAME"
 
-cp -Rf "$HOME/.local/share/srv/docker/GEN_README_REPLACE_APPNAME/system/*" "$HOME/.local/share/srv/docker/GEN_README_REPLACE_APPNAME/"
+cp -Rfva "$HOME/.local/share/srv/docker/GEN_README_REPLACE_APPNAME/dataDir/." "$HOME/.local/share/srv/docker/GEN_README_REPLACE_APPNAME/"
 
 sudo docker run -d \
 --name="GEN_README_REPLACE_APPNAME" \
---hostname "checkip" \
+--hostname "GEN_README_REPLACE_APPNAME" \
 --restart=unless-stopped \
 --privileged \
 -e TZ="${TZ:-${TIMEZONE:-America/New_York}}" \
